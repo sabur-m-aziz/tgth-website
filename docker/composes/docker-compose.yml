@@ -1,0 +1,4 @@
+version: '3.9'
+services:
+  tgth-web-service:
+    container_name: ${CONTAINER_NAME}

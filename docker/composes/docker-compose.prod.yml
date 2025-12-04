@@ -1,0 +1,72 @@
+version: "3.9"
+services:
+  # proxy:
+  #       image: jwilder/nginx-proxy
+  #       container_name: tgth-proxy
+  #       ports:
+  #           - "80:80"
+  #           - "443:443"
+  #       volumes:
+  #           - /var/run/docker.sock:/tmp/docker.sock:ro
+  #           - ./cache.conf:/etc/nginx/includes/cache.conf:ro
+  #           - ./nginx/vhost.d:/etc/nginx/vhost.d
+  #           - ./nginx/certs:/etc/nginx/certs
+  #           - ./nginx/html:/usr/share/nginx/html
+  #       environment:
+  #           - DEFAULT_HOST=tgth.com.au
+  #           - client_max_body_size=30M
+  #       restart: always
+  #       networks:
+  #           - tgth-web-service-network
+
+  # letsencrypt-nginx-proxy:
+  #       image: jrcs/letsencrypt-nginx-proxy-companion
+  #       container_name: letsencrypt
+  #       restart: always
+  #       depends_on:
+  #           - proxy
+  #       volumes:
+  #           - /var/run/docker.sock:/var/run/docker.sock:ro
+  #           - ./nginx/certs:/etc/nginx/certs
+  #           - ./nginx/vhost.d:/etc/nginx/vhost.d
+  #           - ./nginx/html:/usr/share/nginx/html
+  #       environment:
+  #           - NGINX_PROXY_CONTAINER=tgth-proxy
+  #       networks:
+  #           - tgth-web-service-network
+
+  tgth-web-service:
+    build:
+      context: ../../
+      dockerfile: ./docker/Dockerfile
+    image: tofazzalshuvo/tgth-web-service:v8.64
+    restart: always
+    env_file:
+      - ../../.env
+    command: yarn start
+    ports:
+      - 8081:8081
+    # environment:
+    #         - VIRTUAL_HOST=${VIRTUAL_HOST:-tgth.com.au}
+    #         - LETSENCRYPT_HOST=tgth.com.au,www.tgth.com.au
+    #         - LETSENCRYPT_EMAIL=info@tgth.com.au
+    #         - client_max_body_size=30M
+    networks:
+      - tgth-web-service-network
+
+networks:
+    tgth-web-service-network:
+        name: ${EXTERNAL_NETWORK:-tgth-web-service-network}
+        external: true
+# local
+# update the docker version
+# ./bin/deploy.sh main
+# docker push tofazzalshuvo/tgth-web-service:v8.64
+
+# server
+# ssh -i tgth-production-vm-01.pem ubuntu@3.24.183.241
+# see the tgth-deployment md file
+
+# not_needed
+# ./bin/deploy.sh main
+# docker rmi tofazzalshuvo/tgth-web-service:v8.12 tofazzalshuvo/tgth-web-service:v8.13

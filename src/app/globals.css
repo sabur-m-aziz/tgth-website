@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1f3f99;
+  --secondary-color: #00a2df;
+  --tertiary-color: #0075a7;
+  --accent-color: #faa733;
+  --gray-color:#343F52;
+  --blue-color:#0075A7;
+
+  --background-primary: #ffffff;
+  --background-secondary: #f7f9fc;
+
+  --text-primary: #5a5a5c;
+  --text-secondary: #212123;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-barlow text-textSecondary;
+}
+/* hero section title for page */
+h1 {
+  @apply text-3.5xl lg:text-5.5xl leading-9.5 lg:leading-19.5 font-semibold;
+}
+/* second biggest title */
+h2 {
+  @apply text-3.5xl lg:text-5xl leading-10 lg:leading-10.5 font-bold;
+}
+/* section titles */
+h3 {
+  @apply text-3.5xl lg:text-4xl leading-9 lg:leading-11 font-semibold;
+}
+/* section titles */
+h4 {
+  @apply text-xl lg:text-2xl leading-7 lg:leading-7 font-bold;
+}
+p {
+  @apply font-clearSans text-textPrimary text-base lg:text-lg;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (min-width: 672px) and (max-width: 1023px) {
+  .w-half-container {
+    width: 672px !important;
+  }
+}
+
+@media (max-width: 345px) {
+  .w-half-container {
+    padding: 10px !important;
+  }
+  .container {
+    padding: 10px !important;
+  }
+}
+
+.group[data-focus-visible="true"] .group-data-\[focus-visible\=true\]\:ring-2{
+  box-shadow: none !important;
+}

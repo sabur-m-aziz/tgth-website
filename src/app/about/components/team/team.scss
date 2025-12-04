@@ -1,0 +1,94 @@
+.team {
+  /* CAROUSEL */
+  .owl-carousel {
+    position: relative;
+  }
+  /* NAV / NEXT, PREV BUTTON */
+  .owl-nav {
+    margin-top: 0;
+    position: absolute;
+    top: -60px;
+    right: 0;
+  }
+  .owl-prev,
+  .owl-next {
+    width: 36px;
+    height: 36px;
+    font-size: 30px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color);
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 12px !important;
+    i {
+      font-size: 18px;
+      padding: 0 !important;
+      color: white;
+    }
+  }
+  .owl-prev.disabled,
+  .owl-next.disabled {
+    background-color: transparent !important;
+    opacity: 1;
+    i {
+      color: var(--primary-color);
+    }
+  }
+  /* DOTS */
+  .owl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .owl-dot span {
+    width: 6px !important;
+    height: 6px !important;
+    background: #aab0bc !important;
+    margin: 0 7px !important;
+  }
+  .owl-dot.active span {
+    width: 10px !important;
+    height: 10px !important;
+    background: transparent !important;
+    border: 3px solid #aab0bc;
+  }
+  /* Large device styles for owl-dots */
+  @media (min-width: 1024px) {
+    // nav
+    .owl-nav {
+      top: 57%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .owl-prev,
+      .owl-next {
+        margin: 0 !important;
+        width: 48px;
+        height: 48px;
+      }
+      .owl-prev {
+        transform: translateX(-96px);
+      }
+      .owl-next {
+        transform: translateX(96px);
+      }
+    }
+    // dots
+    .owl-dots {
+      margin-top: 36px;
+    }
+    // .owl-dot span {
+    //   width: 36px !important;
+    //   height: 36px !important;
+    // }
+    // .owl-dot.active span {
+    //   width: 36px !important;
+    //   height: 36px !important;
+    //   border-width: 3px;
+    // }
+  }
+}

@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  tgth-web-service:
+    image: ${CONTAINER_NAME}:latest
+    build:
+      context: ../../
+      dockerfile: ./docker/Dockerfile.production
+    env_file:
+      - ../../.env
+    ports:
+      - ${EXTERNAL_PORT}:${PORT}
+    networks:
+      tgth-web-service-network:
+networks:
+  tgth-web-service-network:

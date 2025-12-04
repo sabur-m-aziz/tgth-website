@@ -1,0 +1,27 @@
+.primary-input > *:first-child,
+.primary-select > div > div {
+  border: 1px solid #d6d6d6;
+  /* background-color: rgb(162, 201, 162) !important; */
+  background-color: #ffffff !important;
+  border-radius: 8px;
+  height: 64px;
+}
+
+.primary-input > *:first-child {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .primary-input > *:first-child,
+  .primary-select > div > div {
+    height: 56px;
+  }
+}
+/* #custom-textarea {
+  height: auto !important;
+} */
+#custom-textarea,
+textarea#custom-textarea {
+  height: auto !important;
+}

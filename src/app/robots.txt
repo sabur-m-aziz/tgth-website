@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /*.webp$
+Disallow: /*.ttf$
+
+Sitemap: https://tgth.com.au/sitemap.xml
