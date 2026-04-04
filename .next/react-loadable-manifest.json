@@ -1,0 +1,12 @@
+{
+  "components/ui/contact-us/ContactForm.tsx -> ./data": {
+    "id": "components/ui/contact-us/ContactForm.tsx -> ./data",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_ui_contact-us_data_index_ts.js"
+    ]
+  },
+  "components/ui/contact-us/ContactUs.tsx -> ./ContactForm": {
+    "id": "components/ui/contact-us/ContactUs.tsx -> ./ContactForm",
+    "files": []
+  }
+}

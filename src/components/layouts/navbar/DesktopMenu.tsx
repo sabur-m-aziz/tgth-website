@@ -56,25 +56,31 @@ export const DesktopMenu: FC<Props> = ({ menuItems }) => {
                     : "opacity-0 invisible -translate-y-2"
                 }`}
               >
-                <div className="py-5 grid grid-cols-3 gap-2 max-w-[1400px] mx-auto">
-                  {item.children.map((category, i) => (
-                    <div key={i} className="flex flex-col gap-3">
-                      <h3 className="font-barlow text-lg font-semibold text-black">
-                        {category.title}
-                      </h3>
-                      <ul className="flex flex-col gap-2">
-                        {category.children?.map((child, idx) => (
-                          <li key={idx}>
-                            <Link
-                              href={child.link}
-                              className="block text-textSecondary hover:text-primary font-barlow text-base cursor-pointer"
-                              onClick={() => setOpenIndex(null)}
-                            >
-                              {child.title}
-                            </Link>
-                          </li>
+                <div className="py-5 flex gap-8 max-w-[1400px] mx-auto">
+                  {[0, 1, 2].map((colIndex) => (
+                    <div key={colIndex} className="flex flex-col gap-4 flex-1">
+                      {item.children
+                        ?.slice(colIndex * 3, colIndex * 3 + 3)
+                        .map((category, catIdx) => (
+                          <div key={catIdx} className="flex flex-col gap-2">
+                            <h3 className="font-barlow text-lg font-semibold text-black">
+                              {category.title}
+                            </h3>
+                            <ul className="flex flex-col gap-1">
+                              {category.children?.map((child, idx) => (
+                                <li key={idx}>
+                                  <Link
+                                    href={child.link}
+                                    className="block text-textSecondary hover:text-primary font-barlow text-base cursor-pointer"
+                                    onClick={() => setOpenIndex(null)}
+                                  >
+                                    {child.title}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         ))}
-                      </ul>
                     </div>
                   ))}
                 </div>

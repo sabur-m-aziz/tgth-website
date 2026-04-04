@@ -31,6 +31,19 @@ export default function TGTHNavbar() {
       link: "/our-services",
       children: [
         {
+          title: "Creative",
+          children: [
+            { title: "Content Developer", link: "/content-developer" },
+            { title: "Content Moderator", link: "/content-moderator" },
+            { title: "Creative Designer", link: "/creative-designer" },
+            { title: "Graphic Designer", link: "/graphic-designer" },
+            {
+              title: "Social Media Specialist",
+              link: "/social-media-specialist",
+            },
+          ],
+        },
+        {
           title: "Customer Service",
           children: [
             {
@@ -38,6 +51,16 @@ export default function TGTHNavbar() {
               link: "/customer-service-representative",
             },
             { title: "Reservation Agent", link: "/reservation-agent" },
+          ],
+        },
+        {
+          title: "Finance",
+          children: [
+            { title: "Accountant", link: "/accountant" },
+            { title: "AR and AP Specialist", link: "/ar-ap-specialist" },
+            { title: "Finance Specialist", link: "/finance-specialist" },
+            { title: "Financial Analyst", link: "/financial-analyst" },
+            { title: "Payroll Specialist", link: "/payroll-specialist" },
           ],
         },
         {
@@ -55,21 +78,17 @@ export default function TGTHNavbar() {
           ],
         },
         {
-          title: "Sales",
+          title: "Logistics",
           children: [
-            { title: "Booking Agent", link: "/booking-agent" },
-            { title: "Sales Support", link: "/sales-support" },
-          ],
-        },
-
-        {
-          title: "Finance",
-          children: [
-            { title: "Accountant", link: "/accountant" },
-            { title: "AR and AP Specialist", link: "/ar-ap-specialist" },
-            { title: "Finance Specialist", link: "/finance-specialist" },
-            { title: "Financial Analyst", link: "/financial-analyst" },
-            { title: "Payroll Specialist", link: "/payroll-specialist" },
+            { title: "Logistics Coordinator", link: "/logistics-coordinator" },
+            {
+              title: "Order Processing Specialist",
+              link: "/order-processing-specialist",
+            },
+            {
+              title: "Procurement Specialist",
+              link: "/procurement-specialist",
+            },
           ],
         },
         {
@@ -89,6 +108,17 @@ export default function TGTHNavbar() {
           ],
         },
         {
+          title: "Safety",
+          children: [{ title: "Claims Analyst", link: "/claims-analyst" }],
+        },
+        {
+          title: "Sales",
+          children: [
+            { title: "Booking Agent", link: "/booking-agent" },
+            { title: "Sales Support", link: "/sales-support" },
+          ],
+        },
+        {
           title: "Technology Services",
           children: [
             { title: "Data Analyst", link: "/data-analyst" },
@@ -104,37 +134,6 @@ export default function TGTHNavbar() {
               link: "/technical-support-specialist",
             },
             { title: "Web Developer", link: "/web-developer" },
-          ],
-        },
-        {
-          title: "Creative",
-          children: [
-            { title: "Content Developer", link: "/content-developer" },
-            { title: "Creative Designer", link: "/creative-designer" },
-            { title: "Graphic Designer", link: "/graphic-designer" },
-            {
-              title: "Social Media Specialist",
-              link: "/social-media-specialist",
-            },
-            { title: "Content Moderator", link: "/content-moderator" },
-          ],
-        },
-        {
-          title: "Safety",
-          children: [{ title: "Claims Analyst", link: "/claims-analyst" }],
-        },
-        {
-          title: "Logistics",
-          children: [
-            { title: "Logistics Coordinator", link: "/logistics-coordinator" },
-            {
-              title: "Order Processing Specialist",
-              link: "/order-processing-specialist",
-            },
-            {
-              title: "Procurement Specialist",
-              link: "/procurement-specialist",
-            },
           ],
         },
       ],

@@ -39,7 +39,7 @@ services:
     build:
       context: ../../
       dockerfile: ./docker/Dockerfile
-    image: tofazzalshuvo/tgth-web-service:v8.64
+    image: naimsiddiqui/tgth-web-service:v8.67
     restart: always
     env_file:
       - ../../.env
@@ -61,7 +61,7 @@ networks:
 # local
 # update the docker version
 # ./bin/deploy.sh main
-# docker push tofazzalshuvo/tgth-web-service:v8.64
+# docker push naimsiddiqui/tgth-web-service:v8.64
 
 # server
 # ssh -i tgth-production-vm-01.pem ubuntu@3.24.183.241
@@ -69,4 +69,4 @@ networks:
 
 # not_needed
 # ./bin/deploy.sh main
-# docker rmi tofazzalshuvo/tgth-web-service:v8.12 tofazzalshuvo/tgth-web-service:v8.13
+# docker rmi naimsiddiqui/tgth-web-service:v8.12 naimsiddiqui/tgth-web-service:v8.13
