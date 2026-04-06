@@ -1229,6 +1229,12 @@ video {
 .max-h-full {
   max-height: 100%;
 }
+.max-h-\[1200px\] {
+  max-height: 1200px;
+}
+.max-h-\[900px\] {
+  max-height: 900px;
+}
 .min-h-10 {
   min-height: 2.5rem;
 }
