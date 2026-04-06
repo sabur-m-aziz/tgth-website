@@ -25,7 +25,7 @@ const SectionTitle = ({
       {subTitle && (
         <p
           className={classNames(
-            "font-barlow font-semibold leading-5",
+            "font-barlow font-semibold text-xl leading-5",
             {
               uppercase: subTitleUppercase,
             }
